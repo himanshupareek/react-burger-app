@@ -1,0 +1,69 @@
+In the authentication module, I learnt ->
+
+We added authentication with validation, auto signp, how to manage the token, 
+how to implement authentication In a single page app, 
+We redirect the user when he tried to do something fishy.
+
+
+--->
+
+Burger Improvement ->
+
+Lazy Loading -> Async Component
+Shared Utitility
+removed console.Loading
+updateObject
+
+=== testing framework
+
+Jest is already installed with -> "creat-react-app"
+npm install --save enzyme react-test-renderer enzyme-adapter-react-16
+
+== build app
+npm run build-- then there will be created one folder, name as "build",
+deploy all of the items from this folder to any of the "static Host" like 
+FireBase, GithubPages, AWS etc..
+--we are using Firebase .. and for that ..go to Firebase console and "Hosting" tab.
+need to install "firebase-tools".
+
+"npm install -g firebase-tools"
+
+=====
+webpack
+
+BEhind the scene, webpack has four important features:
+
+1. It always needs atleast one entry point, you could have multiple as well. This could be our "app.j" file.
+Our root js file, which mounts our react application to the DOM, which call React-DOM Render.
+This root file will have more dependency on some other js files and so on, so webpack can build a dependecny-
+graph, starting with this root entry file.
+ 2. It then alalyze, all the dependencies and bundle them together into a output together (e.g. dist/bundle.js)
+
+3. This all was the core functionality. But in between there are some other features -
+For one there are so called Loaders (e.g. babel-loader, css-loader)
+Loaders are applied on per file level. So we can say that all js files should handle with "loaderX", or 
+all css files should handle with "loaderY".
+So loaders are file dependent transformations.
+
+4. We also then have plugins. Where "loaders" are applied on per file basis, "plugins" then take the
+concatnated files, so the "bundle" before its return to the output. (e.g of plugins -> "uglify"). This is 
+on Global level, after the "Loaders" has done their job. This is the "Global transformations".
+
+This all "entry file", "loaders", "plugins" and "bundled Output" is whole process of Webpack.
+
+
+===== Webpack == Basic Workflow requirement.
+
+1. We certainly want to support next generation JS features, so that we can compile the code of next gen 
+JS features into current gen JS code, which runs into all major browsers these days.
+
+2. Handle JSX - so we can use JSX in our Script file. 
+
+3. CSS AutoPrefixing -> so that we can write simple css rules, and get automatic prefixing, so that
+it supports the best syntax in all browsers.
+
+4. Support Image Imports -> We also want to support the import of images, as we did in our "create-react-app"
+and then use it in our template.
+
+5. Optimize the code -> Shrink the code in the smallest size.
+

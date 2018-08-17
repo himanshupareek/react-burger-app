@@ -1,0 +1,16 @@
+.NavigationItems{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    height: 100%;
+}
+
+/* For desktop, all of the links should be next to each other. */
+@media(min-width:500px){
+    .NavigationItems{
+        flex-flow: row;
+    }
+}
